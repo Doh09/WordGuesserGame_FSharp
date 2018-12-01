@@ -1,5 +1,7 @@
 ﻿module AssignmentDescription
 
+//Link til .PDF med opgavebeskrivelsen
+//https://moodle.easv.dk/pluginfile.php/39427/mod_resource/content/1/Word%20Guesser%20Game.pdf
 //The point of this exercise is to complete a F# program for the word guesser game.
 //The concrete outcome should be a working F# console program fulfilling the
 //requirements.

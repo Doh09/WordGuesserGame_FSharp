@@ -1,3 +1,3 @@
 ﻿module CheckIfWordFullyGuessed
 
-//Check depending on if config says case sensitive or not.
+//Check if word guessed depending on if config says case sensitive or not.
