@@ -8,10 +8,10 @@
   <ItemGroup>
     <Compile Include="AssignmentDescription.fs" />
     <Compile Include="Config.fs" />
-    <Compile Include="HelperClasses\GetHelp.fs" />
     <Compile Include="HelperClasses\SelectWordForGame.fs" />
     <Compile Include="HelperClasses\GetHiddenWord.fs" />
     <Compile Include="HelperClasses\CheckIfWordFullyGuessed.fs" />
+    <Compile Include="HelperClasses\GetHelp.fs" />
     <Compile Include="HelperClasses\GameSession.fs" />
     <Compile Include="WordGuesserGame.fs" />
     <Compile Include="Program.fs" />
