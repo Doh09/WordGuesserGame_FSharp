@@ -3,6 +3,10 @@ open System
 //open Config
 //A single game session, not sure if this class should be used.
 
+let WordToGuess = "Bear"
+
+let GuessSoFar = "Be_r"
+
 ///Method used for testing word selection..
 let PrintThreeRandomWords() =
     printf "Three words: "
