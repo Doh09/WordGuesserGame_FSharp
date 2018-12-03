@@ -9,7 +9,5 @@ open Config
 //let getSpaces(words : List<string>) flst = List.filter(fun (x) -> String.exists(x) " ")
 
 let GetWord() : string =
-    //let index = getRandomIndex(Random())
-    //let wordFiltered_Spaces = filterSpaces(Config.WORDS)
     let word = Config.WORDS.[Random().Next(WORDS.Length)]
     word
