@@ -25,12 +25,18 @@ let ExitGame() =
     GameRunning <- false //Set bool false to exit the game loop.
     printfn "Exitting game.."
 
+let Test() =
+    //let text = ""
+    let text = GetHiddenWord.PrintWord("U") ("g") : string
+    printfn "HiddenWord: %s" text
+
 let HandleMenuInput(inp : string) =
     printfn "You selected option: %s" inp
-    match inp with 
+    match inp with //it is more a "if else" than "switch"
     | "1" -> StartGame()
     | "2" -> ShowCredits()
     | "3" -> ExitGame()
+    | "T" -> Test()
     | _ -> printfn "ERROR - not a menu option, please select again..."
 
 let AskForMenuInput() =
