@@ -16,6 +16,7 @@ let ShowMenu() =
 
 let StartGame() =
     printfn "Starting new game session..."
+    GameSession.PrintThreeRandomWords()
 
 let ShowCredits() =
     printfn "Made by Simon Bay Nymand & Alex Andreasen"
