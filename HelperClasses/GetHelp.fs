@@ -5,8 +5,6 @@ let genRandomNumbers high =
     let rnd = System.Random()
     rnd.Next (high)
 
-
-
 //Get a helping character based on which parts of the words have or haven't been guessed.
 let HelpLetter(wordguessed : string) (wordToGuss : string) =
 

@@ -1,12 +1,34 @@
 ﻿module GameSession
 open System
+
 //open Config
 //A single game session, not sure if this class should be used.
 
 let WordToGuess = "Bear"
-
 let GuessSoFar = "Be_r"
+let mutable GameRunning = true;
 
+
+let Game() =
+    while GameRunning do
+        if (Config.HELP && Console.ReadKey().Modifiers = ConsoleModifiers.Control) then 
+            printfn "1"
+            if Console.ReadKey(true).KeyChar |> Char.ToUpper = 'H' then 
+            printf "HELP"
+            GameRunning <- false
+            printfn "2"
+            else
+            printfn "3"
+
+
+let GameSetUp () =
+    WordToGuess = SelectWordForGame.GetWord()
+    printfn "%s" WordToGuess
+    // Prevent example from ending if CTL+C is pressed.
+    Console.TreatControlCAsInput = true
+    Game()
+
+//s i see this as a test
 ///Method used for testing word selection..
 let PrintThreeRandomWords() =
     printf "Three words: "
