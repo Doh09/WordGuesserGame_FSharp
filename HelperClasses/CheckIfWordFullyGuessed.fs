@@ -37,11 +37,13 @@ let MakeGuess(wordGuessedSoFar : string, fullWord : string, guess : char) : stri
 //Check if word guessed depending on if config says case sensitive or not.
 let MakeGuessForWholeWord (wordguessed : string) (wordToGuss : string) : bool =
     
-    //Gør så den fungerer med case sensitive.
+    let mutable wordToGuss2 = wordToGuss
+    let mutable wordguessed2 = wordguessed
 
-    let wordToGuss2 = wordToGuss.ToLower()
-    let wordguessed2 = wordguessed.ToLower()
-    
+    if Config.CASE_SENSITIVE = false then
+        wordToGuss2 <- wordToGuss.ToLower()
+        wordguessed2 <- wordguessed.ToLower()
+
     printfn "wordToGuss : %s" wordToGuss 
     printfn "wordguessed : %s" wordguessed
     printfn "lower WordToGuss : %s" wordToGuss2  
