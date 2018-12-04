@@ -21,6 +21,9 @@ let GetKeyAndModifierTest() =
             KeepGettingInput <- false //exit loop.
          let keyPressed = cki.Key.ToString()
          printfn "%s" keyPressed //Keys er tal, bogstaver, muligvis alle characters.
+
+         if (cki.Key.ToString().Equals("H") && cki.Modifiers.Equals(ConsoleModifiers.Control)) then
+            printfn "Call GetHelp()"
         
 
 
