@@ -24,6 +24,7 @@ let GetKeyAndModifierTest() =
 
          if (cki.Key.ToString().Equals("H") && cki.Modifiers.Equals(ConsoleModifiers.Control)) then
             printfn "Call GetHelp()"
+      //Return ConsoleKeyInfo
         
 
 
