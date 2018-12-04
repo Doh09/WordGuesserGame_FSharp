@@ -13,9 +13,9 @@ let PrintThreeRandomWords() =
     let word1 = SelectWordForGame.GetWord()
     let word2 = SelectWordForGame.GetWord()
     let word3 = SelectWordForGame.GetWord()
-    let word4 = GetHelp.MakeGuess("Be**", "Bear", 'a')
-    let word5 = GetHelp.MakeGuess("Be**", "Bear", 'r')
-    let word6 = GetHelp.MakeGuess("Be**", "Bear", 'x')
+    let word4 = CheckIfWordFullyGuessed.MakeGuess("Be**", "Bear", 'a')
+    let word5 = CheckIfWordFullyGuessed.MakeGuess("Be**", "Bear", 'r')
+    let word6 = CheckIfWordFullyGuessed.MakeGuess("Be**", "Bear", 'x')
     printfn ""
     printfn "Word1: %s" word1
     printfn "Word2: %s" word2

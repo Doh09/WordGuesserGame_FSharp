@@ -31,7 +31,7 @@ let Test() =
     printfn"blah"
 
 let TestWin() = //this is a test Vertion of Gusses a word
-    let won = CheckIfWordFullyGuessed.MakeGuess("BLAH") ("blah") : bool
+    let won = CheckIfWordFullyGuessed.MakeGuessForWholeWord("BLAH") ("blah") : bool
     
     if won then    
         printfn "you Win" 
