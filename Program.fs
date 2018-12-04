@@ -7,7 +7,9 @@ let main argv =
     let x = 10
     let y = 20
     let z = x + y
-
+    GetKeyboardInput.Test()
+    GetKeyboardInput.Test()
+    GetKeyboardInput.Test()
     //printfn "x: %i" x
     //printfn "y: %i" y
     //printfn "z: %i" z

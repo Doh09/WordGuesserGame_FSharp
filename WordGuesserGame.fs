@@ -27,10 +27,17 @@ let ExitGame() =
     printfn "Exitting game.."
 
 let Test() =
-    //let text = ""
-    let text = GetHiddenWord.PrintWord("U") ("g") : string
-    printfn "HiddenWord: %s" text
+    GetHelp.HelpLetter("L_m__")("Lamas")
+    printfn"blah"
 
+let TestWin() = //this is a test Vertion of Gusses a word
+    let won = CheckIfWordFullyGuessed.MakeGuess("BLAH") ("blah") : bool
+    
+    if won then    
+        printfn "you Win" 
+        ExitGame()
+    else printfn "you loss"
+    
 let HandleMenuInput(inp : string) =
     printfn "You selected option: %s" inp
     match inp with //it is more a "if else" than "switch"
