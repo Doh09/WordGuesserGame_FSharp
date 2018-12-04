@@ -6,6 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Include="GetKeyboardInput.fs" />
     <Compile Include="AssignmentDescription.fs" />
     <Compile Include="Config.fs" />
     <Compile Include="HelperClasses\GetHelp.fs" />
