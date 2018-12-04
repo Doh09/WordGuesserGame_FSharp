@@ -3,6 +3,7 @@ open System
 
 //Check if word guessed depending on if config says case sensitive or not.
 
+//Checks if a string contains a char.
 //let checkIfContains(word : string, g : char) : bool = String.exists (fun c -> c = g) word
 
 //Get a helping character based on which parts of the words have or haven't been guessed.
@@ -10,12 +11,12 @@ let MakeGuess(wordGuessedSoFar : string, fullWord : string, guess : char) : stri
     printfn "Getting helping character..."
     let mutable index = 0
     let wordGuessedSoFarChars = wordGuessedSoFar.ToCharArray()
-    for c in fullWord do
+    for c in fullWord do //For each char that is equal to guess, reveal this char in the wordGuessedSoFar.
         printf "char: %c" c
         if (c.Equals(guess)) then
             wordGuessedSoFarChars.[index] <- c
         index <- index + 1
-    let s = System.String.Concat(wordGuessedSoFarChars)
+    let s = System.String.Concat(wordGuessedSoFarChars) //Print the new wordGuessedSoFar.
     
     //printfn ""
     //let bo1 = checkIfContains("bear", 'B')
