@@ -9,6 +9,7 @@
     <Compile Include="GetKeyboardInput.fs" />
     <Compile Include="AssignmentDescription.fs" />
     <Compile Include="Config.fs" />
+    <Compile Include="SettingsMenu.fs" />
     <Compile Include="HelperClasses\SelectWordForGame.fs" />
     <Compile Include="HelperClasses\GetHiddenWord.fs" />
     <Compile Include="HelperClasses\CheckIfWordFullyGuessed.fs" />

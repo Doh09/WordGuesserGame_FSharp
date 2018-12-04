@@ -5,8 +5,9 @@ open Config
 //Then pick a word fitting those requirements.
 
 //let getWithoutSpaces(words : List<string>) : string = words |> Seq.filter (fun x ->  (x.Contains(" "))) |> seq.fst
-let getWithoutSpaces(words : List<string>) : List<string> = words |> List.filter (fun x ->  not (x.Contains(" ")))
-let getWithSpaces(words : List<string>) : List<string> = words |> List.filter (fun x ->  (x.Contains(" "))) 
+let checkIfContains(word : string, g : char) : bool = String.exists (fun c -> c = g) word
+let getWithoutSpaces(words : List<string>) : List<string> = words |> List.filter (fun x ->  not (checkIfContains(x, ' ')))
+let getWithSpaces(words : List<string>) : List<string> = words |> List.filter (fun x ->  checkIfContains(x, ' ')) 
 //let filterSpaces(words : List<string>) flst = List.except(fun (x) -> String.exists(x) " ") 
 
 let GetWord() : string =

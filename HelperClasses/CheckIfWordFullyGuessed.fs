@@ -11,6 +11,11 @@ let MakeGuess(wordGuessedSoFar : string, fullWord : string, guess : char) : stri
     printfn "Getting helping character..."
     let mutable index = 0
     let wordGuessedSoFarChars = wordGuessedSoFar.ToCharArray()
+    
+    //match Config.CASE_SENSITIVE with
+    //| true -> if (c.Equals(guess)) then wordGuessedSoFarChars.[index] <- c; index <- index + 1
+    //| false -> if (c.Equals(guess)) then wordGuessedSoFarChars.[index] <- c; index <- index + 1
+
     for c in fullWord do //For each char that is equal to guess, reveal this char in the wordGuessedSoFar.
         printf "char: %c" c
         if (c.Equals(guess)) then
