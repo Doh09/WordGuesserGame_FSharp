@@ -6,7 +6,6 @@ open System
 //let checkIfContains(word : string, g : char) : bool = String.exists (fun c -> c = g) word
 
 //Get a helping character based on which parts of the words have or haven't been guessed.
-open System
 let MakeGuess(wordGuessedSoFar : string, fullWord : string, guess : char) : string =
     printfn "Getting helping character..."
     let mutable index = 0
@@ -19,7 +18,7 @@ let MakeGuess(wordGuessedSoFar : string, fullWord : string, guess : char) : stri
     let s = System.String.Concat(wordGuessedSoFarChars)
     
     //printfn ""
-    //let bo1 = checkIfContains("bear", 'b')
+    //let bo1 = checkIfContains("bear", 'B')
     //printfn "Test1: %b" bo1
     //let bo2 = checkIfContains("bear", 'x')
     //printfn "Test2: %b" bo2
@@ -30,7 +29,7 @@ let MakeGuess(wordGuessedSoFar : string, fullWord : string, guess : char) : stri
             //c
 
 //Check if word guessed depending on if config says case sensitive or not.
-let MakeGuess (wordguessed : string) (wordToGuss : string) : bool =
+let MakeGuessForWholeWord (wordguessed : string) (wordToGuss : string) : bool =
     
     let wordToGuss2 = wordToGuss.ToLower()
     let wordguessed2 = wordguessed.ToLower()

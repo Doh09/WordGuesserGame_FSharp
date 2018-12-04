@@ -1,7 +1,6 @@
 ﻿module SelectWordForGame //Used at the start to pick a random word.
 open System
 open Config
-open System.Linq
 //Check if spaces and multi true or false.
 //Then pick a word fitting those requirements.
 
@@ -12,6 +11,12 @@ let getWithSpaces(words : List<string>) : List<string> = words |> List.filter (f
 
 let GetWord() : string =
     let mutable wordList = WORDS
-    wordList <- getWithoutSpaces(wordList)
+
+    //Get word listed based on blanks allowed or not.
+    match Config.ALLOW_BLANKS with
+    | true -> wordList <- getWithSpaces(wordList)
+    | false -> wordList <- getWithoutSpaces(wordList)
+    
+    //Get random word from allowed words.
     let word = wordList.[Random().Next(wordList.Length)]
     word
