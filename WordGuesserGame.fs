@@ -13,6 +13,7 @@ let ShowMenu() =
     printfn "1. Start game"
     printfn "2. Show credits"
     printfn "3. Exit game"
+    printfn "4. Show options"
 
 let StartGame() =
     printfn "Starting new game session..."
@@ -31,7 +32,7 @@ let Test() =
     printfn"blah"
 
 let TestWin() = //this is a test Vertion of Gusses a word
-    let won = CheckIfWordFullyGuessed.MakeGuess("BLAH") ("blah") : bool
+    let won = CheckIfWordFullyGuessed.MakeGuessForWholeWord("BLAH") ("blah") : bool
     
     if won then    
         printfn "you Win" 
@@ -45,6 +46,7 @@ let HandleMenuInput(inp : string) =
     | "2" -> ShowCredits()
     | "3" -> ExitGame()
     | "T" -> Test()
+    | "4" -> SettingsMenu.ShowMenu()
     | _ -> printfn "ERROR - not a menu option, please select again..."
 
 let AskForMenuInput() =
