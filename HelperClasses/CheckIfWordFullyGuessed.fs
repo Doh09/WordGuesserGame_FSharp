@@ -16,6 +16,7 @@ let MakeGuess(wordGuessedSoFar : string, fullWord : string, guess : char) : stri
             wordGuessedSoFarChars.[index] <- c
         index <- index + 1
     let s = System.String.Concat(wordGuessedSoFarChars)
+    
     //printfn ""
     //let bo1 = checkIfContains("bear", 'b')
     //printfn "Test1: %b" bo1
