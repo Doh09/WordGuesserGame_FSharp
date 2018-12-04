@@ -27,6 +27,7 @@ let ExitGame() =
     printfn "Exitting game.."
 
 let Test() =
+    GetHelp.HelpLetter("L_m__")("Lamas")
     printfn"blah"
 
 let TestWin() = //this is a test Vertion of Gusses a word
