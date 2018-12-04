@@ -37,6 +37,8 @@ let MakeGuess(wordGuessedSoFar : string, fullWord : string, guess : char) : stri
 //Check if word guessed depending on if config says case sensitive or not.
 let MakeGuessForWholeWord (wordguessed : string) (wordToGuss : string) : bool =
     
+    //Gør så den fungerer med case sensitive.
+
     let wordToGuss2 = wordToGuss.ToLower()
     let wordguessed2 = wordguessed.ToLower()
     
