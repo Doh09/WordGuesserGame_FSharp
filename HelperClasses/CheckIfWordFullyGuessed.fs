@@ -8,8 +8,6 @@ open System
 
 //Get a helping character based on which parts of the words have or haven't been guessed.
 let MakeGuess(wordGuessedSoFar : string)( fullWord : string)( guess : char) : string =
-    printfn "Getting helping character..."
-    
     let wordGuessedSoFarChars = wordGuessedSoFar.ToCharArray()
     
     let mutable fullWord2 = fullWord
