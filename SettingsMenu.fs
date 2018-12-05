@@ -10,7 +10,7 @@ let SelectNextHidden() =
         | "*" -> Config.HIDDEN <- "!"
         | "!" -> Config.HIDDEN <- "?"
         | "?" -> Config.HIDDEN <- "*"
-        | _ -> printfn "Error when selecting new HIDDEN value..."
+        | _ -> Config.HIDDEN <- "*" //Set to default to avoid error.
 
 let ShowMenu() =
     index <- 0

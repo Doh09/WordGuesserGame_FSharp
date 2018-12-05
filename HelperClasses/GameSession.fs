@@ -14,7 +14,7 @@ let Game() =
     let mutable Tries = 0
     WordToGuess <- SelectWordForGame.GetWord()
     GuessSoFar <- GetHiddenWord.HideWord(WordToGuess)
-    gameRunning <- true
+    let mutable gameRunning = true
     let mutable inputInCmd = ""
     Console.TreatControlCAsInput <- true
     while gameRunning do
