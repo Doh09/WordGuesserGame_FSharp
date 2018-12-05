@@ -1,6 +1,5 @@
 ﻿module GameSession
 open System
-open System
 open CheckIfWordFullyGuessed
 
 //open Config
@@ -8,14 +7,16 @@ open CheckIfWordFullyGuessed
 
 let mutable WordToGuess = "Bears12"
 let mutable GuessSoFar = GetHiddenWord.HideWord(WordToGuess)
-    //so the player can keep playing until he wants to stop or he wins
+
 
 let Game() =
     let mutable Tries = 0
     WordToGuess <- SelectWordForGame.GetWord()
     GuessSoFar <- GetHiddenWord.HideWord(WordToGuess)
-    gameRunning <- true
+    let mutable gameRunning = true
+        //so the player can keep playing until he wants to stop or he wins
     let mutable inputInCmd = ""
+
     Console.TreatControlCAsInput <- true
     while gameRunning do
         Console.Clear()
@@ -38,6 +39,7 @@ let Game() =
         if (cki.Key.Equals(ConsoleKey.Backspace)) then
             if (inputInCmd.Length > 0) then //can't set length less than 0.
                 inputInCmd <- inputInCmd.Remove(inputInCmd.Length - 1, 1)
+
         if (cki.KeyChar.ToString() <> null && cki.Key.Equals(ConsoleKey.Enter) = false && cki.Key.Equals(ConsoleKey.Backspace) = false) then
             match Config.MULTIPLE with
             | true -> inputInCmd <- inputInCmd + cki.KeyChar.ToString()
