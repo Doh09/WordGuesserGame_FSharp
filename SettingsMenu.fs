@@ -27,7 +27,9 @@ let ShowMenu() =
         printfn "4. HELP: %b" Config.HELP
         printfn "5. MULTIPLE: %b" Config.MULTIPLE
 
-        let input = System.Console.ReadLine()
+        printfn ""
+        let input = Console.ReadLine()
+        
         match input with
         | "0" -> showOptions <- false
         | "1" -> SelectNextHidden()
