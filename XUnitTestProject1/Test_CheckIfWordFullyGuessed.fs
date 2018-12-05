@@ -54,5 +54,15 @@ let ``Make partial word (substring) guess`` () =
     Assert.Equal("*eebob*eebob*eebob", newGuessSoFar2)
     Assert.Equal("ABigAssMountainWithBigPeople", newGuessSoFar3)
 
+[<Fact>]
+let ``Make partial word (substring) guess with case sensitivity`` () =
+    Config.CASE_SENSITIVE <- true
+    let newGuessSoFar1 = CheckIfWordFullyGuessed.MakeGuessForSubstring("Bee***bee***bee***")("Beebobbeebobbeebob")("BO")
+    let newGuessSoFar2 = CheckIfWordFullyGuessed.MakeGuessForSubstring("***bob***bob***bob")("BEEbobbeebobbEEbob")("EE")
+    let newGuessSoFar3 = CheckIfWordFullyGuessed.MakeGuessForSubstring("A***AssMountainWith***People")("ABigAssMountainWithBigPeople")("Big")
+    Assert.Equal("Bee***bee***bee***", newGuessSoFar1)
+    Assert.Equal("*EEbob***bob*EEbob", newGuessSoFar2)
+    Assert.Equal("ABigAssMountainWithBigPeople", newGuessSoFar3)
+
 //
 //printfn "substring guessed so far: %s" newGuessSoFar

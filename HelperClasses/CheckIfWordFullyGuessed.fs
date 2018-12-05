@@ -41,16 +41,26 @@ let MakeGuessForWholeWord (wordguessed : string) (wordToGuss : string) : bool =
     wordToGuss2 = wordguessed2
 
 let MakeGuessForSubstring(wordGuessedSoFar : string)( fullWord : string)( guess : string) : string =
-    let wordGuessedSoFarChars = wordGuessedSoFar.ToCharArray()
-    let fullwordCharArray = fullWord.ToCharArray()
-    let mutable fullwordMut = fullWord
+    //Case sensitivity settings
+    let mutable caseSense_wgsf = wordGuessedSoFar
+    let mutable caseSense_fullword = fullWord
+    let mutable caseSense_guess = guess
+    if Config.CASE_SENSITIVE = false then
+        caseSense_wgsf <- caseSense_wgsf.ToLower()
+        caseSense_fullword <- caseSense_fullword.ToLower()
+        caseSense_guess <- caseSense_guess.ToLower()
+    //Char array + progress setup
+    let wordGuessedSoFarChars = caseSense_wgsf.ToCharArray()
+    let fullwordCharArray = caseSense_fullword.ToCharArray()
+    let mutable fullwordMut = caseSense_fullword
     let mutable index = 0
     let mutable substringIndex = 0
+    //Action
     while index <> -1 do //While substring can be found
-        index <- fullwordMut.IndexOf(guess) //Find index of matching substring, if not found (0) then leave loop.
+        index <- fullwordMut.IndexOf(caseSense_guess) //Find index of matching substring, if not found (0) then leave loop.
         substringIndex <- 0
         if (index <> -1) then
-            for c in guess do //Go through substring.
+            for c in caseSense_guess do //Go through substring.
                 wordGuessedSoFarChars.[index + substringIndex] <- fullWord.[index + substringIndex]
                 fullwordCharArray.[index + substringIndex] <- '*' //Change inspected substring so doesn't hit that value again.
                 substringIndex <- substringIndex + 1
