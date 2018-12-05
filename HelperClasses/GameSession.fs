@@ -50,12 +50,14 @@ let Game() =
             //GuessSoFar <- CheckIfWordFullyGuessed.MakeGuess(GuessSoFar)(WordToGuess)(char)
             printfn ""
             printfn "-|%s|-" GuessSoFar
-            if CheckIfWordFullyGuessed.MakeGuessForWholeWord(GuessSoFar)(WordToGuess) = true then
-                gameRunning <- false
-                Console.Clear()
-                printfn "You Win"
-                printfn ""
             inputInCmd <- ""
+
+        //Check if won
+        if CheckIfWordFullyGuessed.MakeGuessForWholeWord(GuessSoFar)(WordToGuess) = true then
+           gameRunning <- false
+           Console.Clear()
+           printfn "You Win"
+           printfn ""
 
 ///Method used for testing word selection..
 let PrintThreeRandomWords() =
