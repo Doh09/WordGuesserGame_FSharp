@@ -7,14 +7,13 @@ open System
 
 let mutable WordToGuess = "Bears12"
 let mutable GuessSoFar = GetHiddenWord.HideWord(WordToGuess)
-let mutable gameRunning = false; //Make bool for keeping Game loop running.
     //so the player can keep playing until he wants to stop or he wins
 
 let Game() =
     let mutable Tries = 0
     WordToGuess <- SelectWordForGame.GetWord()
     GuessSoFar <- GetHiddenWord.HideWord(WordToGuess)
-    gameRunning <- true
+    let mutable gameRunning = true
 
     while gameRunning do
         Console.Clear()
@@ -31,7 +30,9 @@ let Game() =
         if (cki.Key.Equals(ConsoleKey.Escape)) then
             Console.Clear()
             gameRunning <- false //exit Game.
-            //GUSS
+
+
+        //GUSS
         if (cki.Key.ToString() <> null) then
             Tries <- Tries + 1
             GuessSoFar <- CheckIfWordFullyGuessed.MakeGuess(GuessSoFar)(WordToGuess)(char)
