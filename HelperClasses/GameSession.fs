@@ -8,7 +8,6 @@ open CheckIfWordFullyGuessed
 
 let mutable WordToGuess = "Bears12"
 let mutable GuessSoFar = GetHiddenWord.HideWord(WordToGuess)
-let mutable gameRunning = false; //Make bool for keeping Game loop running.
     //so the player can keep playing until he wants to stop or he wins
 
 let Game() =
