@@ -19,7 +19,7 @@ let ShowMenu() =
 let StartGame() =
     printfn "Starting new game session..."
     //GetKeyboardInput.GetKeyAndModifierTest()
-    GameSession.GameSetUp()
+    GameSession.Game()
 
 let ShowCredits() =
     printfn "Made by Simon Bay Nymand & Alex Andreasen"

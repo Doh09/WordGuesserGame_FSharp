@@ -28,7 +28,7 @@ let MakeGuess(wordGuessedSoFar : string)( fullWord : string)( guess : char) : st
     let s = System.String.Concat(wordGuessedSoFarChars) //Print the new wordGuessedSoFar.
     s
 
-//Check if word guessed depending on if config says case sensitive or not.
+//Check if word is guessed depending on if config says case sensitive or not.
 let MakeGuessForWholeWord (wordguessed : string) (wordToGuss : string) : bool =
     
     let mutable wordToGuss2 = wordToGuss
