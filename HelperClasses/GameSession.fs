@@ -12,22 +12,26 @@ let mutable gameRunning = false; //Make bool for keeping Game loop running.
 
 let Game() =
     let mutable Tries = 0
+    WordToGuess <- SelectWordForGame.GetWord()
+    GuessSoFar <- GetHiddenWord.HideWord(WordToGuess)
+    gameRunning <- true
+
     while gameRunning do
         Console.Clear()
         printfn "you have tryed %i times" Tries
         printfn "%s" GuessSoFar
         let cki = GetKeyboardInput.GetKeyAndModifierTest();
         let mutable char = cki.KeyChar // this is so GetHelp can be used
-
+            //HELP
         if (cki.Key.ToString().Equals("H") && cki.Modifiers.Equals(ConsoleModifiers.Control)) then
             printfn "Call GetHelp()"
             char <- GetHelp.HelpLetter(GuessSoFar)(WordToGuess)
             printfn "the letter from GetHelp is = %c" char
-              //Exit
+            //Exit
         if (cki.Key.Equals(ConsoleKey.Escape)) then
             Console.Clear()
             gameRunning <- false //exit Game.
-
+            //GUSS
         if (cki.Key.ToString() <> null) then
             Tries <- Tries + 1
             GuessSoFar <- CheckIfWordFullyGuessed.MakeGuess(GuessSoFar)(WordToGuess)(char)
@@ -38,16 +42,6 @@ let Game() =
             Console.Clear()
             printfn "You Win"
             printfn ""
-            
-        
-
-let GameSetUp () =
-    WordToGuess <- SelectWordForGame.GetWord()
-    GuessSoFar <- GetHiddenWord.HideWord(WordToGuess)
-    gameRunning <- true
-    //printfn "%s" WordToGuess
-    // Prevent example from ending if CTL+C is pressed.
-    Game()
 
 ///Method used for testing word selection..
 let PrintThreeRandomWords() =
