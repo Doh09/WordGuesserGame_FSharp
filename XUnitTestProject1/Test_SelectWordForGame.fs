@@ -15,7 +15,3 @@ let ``Select word with blanks`` () =
     Config.ALLOW_BLANKS <- true
     let selectedWord = SelectWordForGame.GetWord()
     Assert.True(selectedWord.Contains(" "))
-
-[<Fact>]
-let ``My test3`` () =
-    Assert.True(true)
