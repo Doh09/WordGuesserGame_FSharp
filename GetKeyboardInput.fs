@@ -14,11 +14,10 @@ let GetKeyAndModifierTest() : ConsoleKeyInfo =
          | ConsoleModifiers.Alt -> printfn "ALT+"
          | ConsoleModifiers.Shift -> printfn "SHIFT+" 
          | ConsoleModifiers.Control  -> printfn "CTRL+"
-         | _ -> printf "not recognized modifier"//Do nothing
+         | _ -> printfn "not recognized modifier"//Do nothing
       //Exit
-      printf "Exit"
       if (cki.Equals(ConsoleKey.Escape)) then
-         printf "Exit"
+         printfn "After ConsoleKey.Escape"
          Config.gameRunning <- false //exit Game.
       //GetHelp | S: i move this to game session
 //      if (cki.Key.ToString().Equals("H") && cki.Modifiers.Equals(ConsoleModifiers.Control)) then

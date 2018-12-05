@@ -27,9 +27,9 @@ let ExitProgram() =
     Config.programRunning <- false //Set bool false to exit the game loop.
     printfn "Exitting Program.."
 
-let KeyBoardReader() =
-    let Cki = GetKeyAndModifierTest()
-    printfn "the letter is : %c" Cki.KeyChar
+//let KeyBoardReader() =
+//    let Cki = GetKeyAndModifierTest()
+//    printfn "the letter is : %c" Cki.KeyChar
     
 let HandleMenuInput(inp : string) =
     printfn "You selected option: %s" inp

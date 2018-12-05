@@ -20,7 +20,7 @@ let MakeGuess(wordGuessedSoFar : string)( fullWord : string)( guess : char) : st
         wordguessed2 <- char.ToString().ToLower()
 
     for c in fullWord do //For each char that is equal to guess, reveal this char in the wordGuessedSoFar.
-        printf "char: %c" c
+//        printfn "char: %c" c
         if (c.Equals(guess)) then
             wordGuessedSoFarChars.[index] <- c
         index <- index + 1
@@ -44,9 +44,9 @@ let MakeGuessForWholeWord (wordguessed : string) (wordToGuss : string) : bool =
         wordToGuss2 <- wordToGuss.ToLower()
         wordguessed2 <- wordguessed.ToLower()
 
-    printfn "wordToGuss : %s" wordToGuss 
-    printfn "wordguessed : %s" wordguessed
-    printfn "lower WordToGuss : %s" wordToGuss2  
-    printfn "lower Wordguessed : %s" wordguessed2
+//    printfn "wordToGuss : %s" wordToGuss 
+//    printfn "wordguessed : %s" wordguessed
+//    printfn "lower WordToGuss : %s" wordToGuss2  
+//    printfn "lower Wordguessed : %s" wordguessed2
 
     wordToGuss2 = wordguessed2
