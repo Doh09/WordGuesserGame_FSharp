@@ -17,7 +17,7 @@ let Game() =
     GuessSoFar <- GetHiddenWord.HideWord(WordToGuess)
     gameRunning <- true
     let mutable inputInCmd = ""
-
+    Console.TreatControlCAsInput <- true
     while gameRunning do
         Console.Clear()
         printfn "you have tryed %i times" Tries
@@ -30,6 +30,7 @@ let Game() =
             printfn "Call GetHelp()"
             char <- GetHelp.HelpLetter(GuessSoFar)(WordToGuess)
             printfn "the letter from GetHelp is = %c" char
+            GuessSoFar <- CheckIfWordFullyGuessed.MakeGuess(GuessSoFar)(WordToGuess)(char)
             //Exit
         if (cki.Key.Equals(ConsoleKey.Escape)) then
             Console.Clear()
