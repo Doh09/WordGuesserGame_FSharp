@@ -19,6 +19,18 @@ let ``Make single character guess`` () =
     Assert.Equal(WordGuessedSoFar, wordAfterNewGuess3)
 
 [<Fact>]
+let ``Make single character guess with case sensitivity`` () =
+    Config.CASE_SENSITIVE <- true
+    let FullWord = "Big Mountain"
+    let WordGuessedSoFar = "**g ***nta*n"
+    let Guess1 = 'B' //upper case B
+    let Guess2 = 'b' //lower case b
+    let wordAfterNewGuess1 = CheckIfWordFullyGuessed.MakeGuess(WordGuessedSoFar)(FullWord)(Guess1)
+    let wordAfterNewGuess2 = CheckIfWordFullyGuessed.MakeGuess(WordGuessedSoFar)(FullWord)(Guess2)
+    Assert.Equal("B*g ***nta*n", wordAfterNewGuess1)
+    Assert.Equal(WordGuessedSoFar, wordAfterNewGuess2)
+
+[<Fact>]
 let ``Make full word guess`` () =
     let FullWord1 = "Big Mountain"
     let FullWord2 = "Jeremiah"
