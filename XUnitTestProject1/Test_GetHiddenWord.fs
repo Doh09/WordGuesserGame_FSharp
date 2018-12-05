@@ -12,9 +12,18 @@ let ``Words can be hidden with blanks`` () =
     let testResult1 = GetHiddenWord.HideWord(testWord1)
     let testResult2 = GetHiddenWord.HideWord(testWord2)
     let testResult3 = GetHiddenWord.HideWord(testWord3)
-    Assert.Equal("******************", testResult1)
-    Assert.Equal("****************", testResult2)
-    Assert.Equal("**************", testResult3)
+    let mutable expectedResult1 = ""
+    for c in testWord1 do 
+        expectedResult1 <- expectedResult1 + Config.HIDDEN
+    let mutable expectedResult2 = ""
+    for c in testWord2 do 
+        expectedResult2 <- expectedResult2 + Config.HIDDEN
+    let mutable expectedResult3 = ""
+    for c in testWord3 do 
+        expectedResult3 <- expectedResult3 + Config.HIDDEN
+    Assert.Equal(expectedResult1, testResult1)
+    Assert.Equal(expectedResult2, testResult2)
+    Assert.Equal(expectedResult3, testResult3)
 
 [<Fact>]
 let ``Words can be hidden without blanks`` () =
@@ -24,9 +33,18 @@ let ``Words can be hidden without blanks`` () =
     let testResult1 = GetHiddenWord.HideWord(testWord1)
     let testResult2 = GetHiddenWord.HideWord(testWord2)
     let testResult3 = GetHiddenWord.HideWord(testWord3)
-    Assert.Equal("***", testResult1)
-    Assert.Equal("********", testResult2)
-    Assert.Equal("*********", testResult3)
+    let mutable expectedResult1 = ""
+    for c in testWord1 do 
+        expectedResult1 <- expectedResult1 + Config.HIDDEN
+    let mutable expectedResult2 = ""
+    for c in testWord2 do 
+        expectedResult2 <- expectedResult2 + Config.HIDDEN
+    let mutable expectedResult3 = ""
+    for c in testWord3 do 
+        expectedResult3 <- expectedResult3 + Config.HIDDEN
+    Assert.Equal(expectedResult1, testResult1)
+    Assert.Equal(expectedResult2, testResult2)
+    Assert.Equal(expectedResult3, testResult3)
 
 [<Fact>]
 let ``My test3`` () =
