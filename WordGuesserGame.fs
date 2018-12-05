@@ -17,6 +17,7 @@ let ShowMenu() =
 
 let StartGame() =
     printfn "Starting new game session..."
+    GetKeyboardInput.GetKeyAndModifierTest()
     GameSession.GameSetUp()
 
 let ShowCredits() =
