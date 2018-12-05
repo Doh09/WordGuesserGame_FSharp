@@ -19,3 +19,13 @@ let mutable programRunning = true; //Make bool for keeping Program loop running.
 
 let mutable gameRunning = false; //Make bool for keeping Game loop running.
     //so the player can keep playing until he wants to stop or he wins
+
+let ResetToDefaultConfigs() =
+    HIDDEN <- "*"
+    CASE_SENSITIVE <- false
+    ALLOW_BLANKS <- false
+    HELP <- false
+    MULTIPLE <- false
+   
+let ResetWordList() =
+    WORDS <- ["Word cake"; "Sandwich cake"; "Desert"; "House" ]
