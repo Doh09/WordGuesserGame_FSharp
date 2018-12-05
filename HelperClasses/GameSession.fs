@@ -40,7 +40,10 @@ let Game() =
             if (inputInCmd.Length > 0) then //can't set length less than 0.
                 inputInCmd <- inputInCmd.Remove(inputInCmd.Length - 1, 1)
         if (cki.KeyChar.ToString() <> null && cki.Key.Equals(ConsoleKey.Enter) = false && cki.Key.Equals(ConsoleKey.Backspace) = false) then
-            inputInCmd <- inputInCmd + cki.KeyChar.ToString()
+            match Config.MULTIPLE with
+            | true -> inputInCmd <- inputInCmd + cki.KeyChar.ToString()
+            | false -> inputInCmd <- cki.KeyChar.ToString()
+            
         if (cki.Key.Equals(ConsoleKey.Enter)) then
             Tries <- Tries + 1
             GuessSoFar <- CheckIfWordFullyGuessed.MakeGuessForSubstring(GuessSoFar)(WordToGuess)(inputInCmd)
