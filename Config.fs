@@ -22,4 +22,4 @@ let ResetToDefaultConfigs() =
     MULTIPLE <- false
    
 let ResetWordList() =
-    WORDS <- ["Word cake"; "Sandwich cake"; "Desert"; "House" ]
+    WORDS <- ["Juletræsfod";"Advent";"Julekalender";"Kanel";"Julemandsskæg";"Juleaften";"Julemand"; "Nisse Hue" ;"Tændstikker" ;"Jule Kager" ;"Juletræ" ; "Desert"; "Nøddeknækker"; "Pebernødder" ;"Kræmmerhus" ; "JuleBryg" ; "Kagedåse" ]
