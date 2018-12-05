@@ -22,7 +22,7 @@ let Game() =
         Console.Clear()
         printfn "you have tryed %i times" Tries
         printfn "%s" GuessSoFar
-        printfn "INPUT: %s" inputInCmd
+        printf "%s" inputInCmd; printfn " <- INPUT"
         let cki = GetKeyboardInput.GetKeyAndModifierTest();
         let mutable char = cki.KeyChar // this is so GetHelp can be used
             //HELP
@@ -35,9 +35,9 @@ let Game() =
             Console.Clear()
             gameRunning <- false //exit Game.
             //GUSS
-        //if (cki.Key.Equals(ConsoleKey.Backspace)) then
-        //    if (inputInCmd.Length > 1) then //can't set length less than 0.
-        //        inputInCmd <- inputInCmd.Remove(inputInCmd.Length - 1, 1)
+        if (cki.Key.Equals(ConsoleKey.Backspace)) then
+            if (inputInCmd.Length > 0) then //can't set length less than 0.
+                inputInCmd <- inputInCmd.Remove(inputInCmd.Length - 1, 1)
         if (cki.KeyChar.ToString() <> null && cki.Key.Equals(ConsoleKey.Enter) = false && cki.Key.Equals(ConsoleKey.Backspace) = false) then
             inputInCmd <- inputInCmd + cki.KeyChar.ToString()
         if (cki.Key.Equals(ConsoleKey.Enter)) then
