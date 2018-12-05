@@ -15,10 +15,7 @@ let GetKeyAndModifierTest() : ConsoleKeyInfo =
          | ConsoleModifiers.Shift -> printfn "SHIFT+" 
          | ConsoleModifiers.Control  -> printfn "CTRL+"
          | _ -> printfn "not recognized modifier"//Do nothing
-      //Exit
-      if (cki.Key.Equals(ConsoleKey.Escape)) then
-         printfn "After ConsoleKey.Escape"
-         Config.gameRunning <- false //exit Game.
+
       //GetHelp | S: i move this to game session
 //      if (cki.Key.ToString().Equals("H") && cki.Modifiers.Equals(ConsoleModifiers.Control)) then
 //            printfn "Call GetHelp()"

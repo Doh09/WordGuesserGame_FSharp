@@ -5,7 +5,8 @@ open GetKeyboardInput
 
 //Acts as gathering/central point for the game.
 
-//Set mutable so can be changed later to exit the game.
+let mutable programRunning = true; //Make bool for keeping Program loop running.
+    //so the play returns to the menu after each game
 
 let ShowMenu() =
     printfn "Menu"
@@ -17,7 +18,7 @@ let ShowMenu() =
 
 let StartGame() =
     printfn "Starting new game session..."
-    GetKeyboardInput.GetKeyAndModifierTest()
+    //GetKeyboardInput.GetKeyAndModifierTest()
     GameSession.GameSetUp()
 
 let ShowCredits() =
@@ -25,7 +26,7 @@ let ShowCredits() =
     printfn "Hope you enjoy the game!"
 
 let ExitProgram() =
-    Config.programRunning <- false //Set bool false to exit the game loop.
+    programRunning <- false //Set bool false to exit the game loop.
     printfn "Exitting Program.."
     
 let HandleMenuInput(inp : string) =
@@ -45,7 +46,7 @@ let AskForMenuInput() =
 let StartProgram() =
     printfn "Welcome to the word guesser game!"
     
-    while Config.programRunning do
+    while programRunning do
         ShowMenu()
         AskForMenuInput()
         printfn "Welcome back to the menu"

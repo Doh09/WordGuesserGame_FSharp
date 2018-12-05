@@ -1,6 +1,7 @@
 ﻿module SettingsMenu
 
 open System
+
 let ShowMenu() =
     printfn ""
     printfn "Options"
