@@ -25,7 +25,7 @@ let Game() =
         let cki = GetKeyboardInput.GetKeyAndModifierTest();
         let mutable char = cki.KeyChar // this is so GetHelp can be used
             //HELP
-        if (cki.Key.ToString().Equals("H") && cki.Modifiers.Equals(ConsoleModifiers.Control)) then
+        if (cki.Key.ToString().Equals("H") && cki.Modifiers.Equals(ConsoleModifiers.Control) && Config.HELP) then
             printfn "Call GetHelp()"
             char <- GetHelp.HelpLetter(GuessSoFar)(WordToGuess)
             printfn "the letter from GetHelp is = %c" char
