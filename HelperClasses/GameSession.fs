@@ -19,6 +19,7 @@ let Game() =
     Console.TreatControlCAsInput <- true
     while gameRunning do
         Console.Clear()
+        printfn "The length of the word is %i" GuessSoFar.Length
         printfn "you have tryed %i times" Tries
         printfn "%s" GuessSoFar
         printf "%s" inputInCmd; printfn " <- INPUT"
@@ -27,6 +28,7 @@ let Game() =
             //HELP
         if (cki.Key.ToString().Equals("H") && cki.Modifiers.Equals(ConsoleModifiers.Control) && Config.HELP) then
             printfn "Call GetHelp()"
+            Tries <- Tries + 1
             char <- GetHelp.HelpLetter(GuessSoFar)(WordToGuess)
             printfn "the letter from GetHelp is = %c" char
             GuessSoFar <- CheckIfWordFullyGuessed.MakeGuess(GuessSoFar)(WordToGuess)(char)
@@ -55,6 +57,11 @@ let Game() =
         if CheckIfWordFullyGuessed.MakeGuessForWholeWord(GuessSoFar)(WordToGuess) = true then
            gameRunning <- false
            Console.Clear()
+           
+
+           printfn "You guessed it! Using only %i guesses!" Tries
+           printfn ""
+           printfn "The length of the word is %i" GuessSoFar.Length
            printfn "You Win"
            printfn ""
 
