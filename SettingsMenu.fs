@@ -36,6 +36,7 @@ let ShowMenu() =
         | "4" -> Config.HELP <- not Config.HELP
         | "5" -> Config.MULTIPLE <- not Config.MULTIPLE
         | _ -> printfn "ERROR - Invalid command"
+    Console.Clear()
 
     
  

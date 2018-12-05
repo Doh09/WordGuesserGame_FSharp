@@ -13,7 +13,7 @@ let ShowMenu() =
     printfn "1. Start game"
     printfn "2. Show credits"
     printfn "3. Exit program"
-    //printfn "4. Show options"
+    printfn "4. Show options"
     printfn "To select an option, please write a number (1-4) and press >ENTER<..."
 
 let StartGame() =
