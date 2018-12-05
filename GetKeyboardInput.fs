@@ -16,7 +16,7 @@ let GetKeyAndModifierTest() : ConsoleKeyInfo =
          | ConsoleModifiers.Control  -> printfn "CTRL+"
          | _ -> printfn "not recognized modifier"//Do nothing
       //Exit
-      if (cki.Equals(ConsoleKey.Escape)) then
+      if (cki.Key.Equals(ConsoleKey.Escape)) then
          printfn "After ConsoleKey.Escape"
          Config.gameRunning <- false //exit Game.
       //GetHelp | S: i move this to game session

@@ -11,7 +11,7 @@
     <Compile Include="Test_CheckIfWordFullyGuessed.fs" />
     <Compile Include="Test_GetHiddenWord.fs" />
     <Compile Include="Test_SelectWordForGame.fs" />
-    <Compile Include="Tests.fs" />
+    <Compile Include="Test_BluePrintClass.fs" />
   </ItemGroup>
 
   <ItemGroup>
