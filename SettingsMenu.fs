@@ -24,9 +24,9 @@ let ShowMenu() =
         printfn "5. MULTIPLE: %b" Config.MULTIPLE
 
         printfn ""
-        let input = Console.ReadLine()
+        let inp = Console.ReadLine()
         
-        match input with
+        match inp with
         | "0" -> showOptions <- false
         | "1" -> SelectNextHidden()
         | "2" -> Config.CASE_SENSITIVE <- not Config.CASE_SENSITIVE
