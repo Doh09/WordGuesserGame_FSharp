@@ -42,7 +42,7 @@ let Game() =
         
 
 let GameSetUp () =
-    //WordToGuess <- SelectWordForGame.GetWord()
+    WordToGuess <- SelectWordForGame.GetWord()
     GuessSoFar <- GetHiddenWord.HideWord(WordToGuess)
     gameRunning <- true
     //printfn "%s" WordToGuess

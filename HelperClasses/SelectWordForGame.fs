@@ -10,14 +10,13 @@ let getWithoutSpaces(words : List<string>) : List<string> = words |> List.filter
 let getWithSpaces(words : List<string>) : List<string> = words |> List.filter (fun x ->  checkIfContains(x, ' ')) 
 //let filterSpaces(words : List<string>) flst = List.except(fun (x) -> String.exists(x) " ") 
 
+//retrun a random word that follows the wanted wishes
 let GetWord() : string =
     let mutable wordList = WORDS
-
     //Get word listed based on blanks allowed or not.
     match Config.ALLOW_BLANKS with
     | true -> wordList <- getWithSpaces(wordList)
     | false -> wordList <- getWithoutSpaces(wordList)
-    
     //Get random word from allowed words.
     let word = wordList.[Random().Next(wordList.Length)]
     word

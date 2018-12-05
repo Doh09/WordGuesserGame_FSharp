@@ -11,8 +11,5 @@ let HelpLetter(wordguessed : string) (wordToGuss : string) : char =
     for c in wordToGuss do
         if not (wordguessed.Contains(c)) then 
             helpChar  <- [c] |> List.append helpChar
-
     let l = genRandomNumbers (helpChar.Length)
-    printfn""
-    printfn "%A" l
     helpChar.Item(l)

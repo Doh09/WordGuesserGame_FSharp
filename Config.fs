@@ -11,7 +11,7 @@ let mutable HELP = false //if this is true, the program will make a correct gues
 let mutable MULTIPLE = false //if this is true, the user might enter more than one character; 
 //it will count as one guess. For instance; if the user enters “ab”, all substrings with “ab” will be visible.
 
-let mutable WORDS = ["Word cake"; "Sandwich cake"; "Desert"; "House" ] //at list of strings.
+let mutable WORDS = ["Juletræsfod";"Advent";"Julekalender";"Kanel";"Julemandsskæg";"Juleaften";"Julemand"; "Nisse Hue" ;"Tændstikker" ;"Jule Kager" ;"Juletræ" ; "Desert"; "Nøddeknækker"; "Pebernødder" ;"Kræmmerhus" ; "JuleBryg" ; "Kagedåse" ] //at list of strings.
 //It is from this collection the program must get the random words to be guessed.
 
 let ResetToDefaultConfigs() =

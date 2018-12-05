@@ -25,13 +25,6 @@ let MakeGuess(wordGuessedSoFar : string)( fullWord : string)( guess : char) : st
             wordGuessedSoFarChars.[index] <- c
         index <- index + 1
     let s = System.String.Concat(wordGuessedSoFarChars) //Print the new wordGuessedSoFar.
-    
-    //printfn ""
-    //let bo1 = checkIfContains("bear", 'B')
-    //printfn "Test1: %b" bo1
-    //let bo2 = checkIfContains("bear", 'x')
-    //printfn "Test2: %b" bo2
-    //printfn "wordGuessedSoFarChars: %s" s
     s
 
 //Check if word guessed depending on if config says case sensitive or not.
@@ -43,10 +36,5 @@ let MakeGuessForWholeWord (wordguessed : string) (wordToGuss : string) : bool =
     if Config.CASE_SENSITIVE = false then
         wordToGuss2 <- wordToGuss.ToLower()
         wordguessed2 <- wordguessed.ToLower()
-
-//    printfn "wordToGuss : %s" wordToGuss 
-//    printfn "wordguessed : %s" wordguessed
-//    printfn "lower WordToGuss : %s" wordToGuss2  
-//    printfn "lower Wordguessed : %s" wordguessed2
 
     wordToGuss2 = wordguessed2
