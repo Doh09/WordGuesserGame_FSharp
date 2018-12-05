@@ -25,7 +25,7 @@ let MakeGuess(wordGuessedSoFar : string)( fullWord : string)( guess : char) : st
         if (c.Equals(guess2)) then
             wordGuessedSoFarChars.[index] <- fullWord.[index]
         index <- index + 1
-    let s = System.String.Concat(wordGuessedSoFarChars) //Print the new wordGuessedSoFar.
+    let s = System.String.Concat(wordGuessedSoFarChars) //Make char array into string.
     s
 
 //Check if word is guessed depending on if config says case sensitive or not.
@@ -40,5 +40,24 @@ let MakeGuessForWholeWord (wordguessed : string) (wordToGuss : string) : bool =
 
     wordToGuss2 = wordguessed2
 
-//let MakeGuessForSubstring(wordguessed : string) (guess : string) : bool =
+let MakeGuessForSubstring(wordGuessedSoFar : string)( fullWord : string)( guess : string) : string =
+    let wordGuessedSoFarChars = wordGuessedSoFar.ToCharArray()
+    let fullwordCharArray = fullWord.ToCharArray()
+    let mutable fullwordMut = fullWord
+    let mutable index = 0
+    let mutable substringIndex = 0
+    while index <> -1 do //While substring can be found
+        index <- fullwordMut.IndexOf(guess) //Find index of matching substring, if not found (0) then leave loop.
+        substringIndex <- 0
+        if (index <> -1) then
+            for c in guess do //Go through substring.
+                wordGuessedSoFarChars.[index + substringIndex] <- fullWord.[index + substringIndex]
+                fullwordCharArray.[index + substringIndex] <- '*' //Change inspected substring so doesn't hit that value again.
+                substringIndex <- substringIndex + 1
+        fullwordMut <- String.Concat(fullwordCharArray) //Change word being expected so can jump to next valid substring if any.
+    
+    let s = System.String.Concat(wordGuessedSoFarChars) //Make char array into string.
+    printfn "%s" s
+    s
+    
     

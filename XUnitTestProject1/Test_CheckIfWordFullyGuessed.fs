@@ -44,3 +44,15 @@ let ``Make full word guess`` () =
     Assert.True(result1)
     Assert.False(result2)
     Assert.True(result3)
+
+[<Fact>]
+let ``Make partial word (substring) guess`` () =
+    let newGuessSoFar1 = CheckIfWordFullyGuessed.MakeGuessForSubstring("Bee***bee***bee***")("Beebobbeebobbeebob")("bo")
+    let newGuessSoFar2 = CheckIfWordFullyGuessed.MakeGuessForSubstring("***bob***bob***bob")("Beebobbeebobbeebob")("ee")
+    let newGuessSoFar3 = CheckIfWordFullyGuessed.MakeGuessForSubstring("A***AssMountainWith***People")("ABigAssMountainWithBigPeople")("Big")
+    Assert.Equal("Beebo*beebo*beebo*", newGuessSoFar1)
+    Assert.Equal("*eebob*eebob*eebob", newGuessSoFar2)
+    Assert.Equal("ABigAssMountainWithBigPeople", newGuessSoFar3)
+
+//
+//printfn "substring guessed so far: %s" newGuessSoFar
