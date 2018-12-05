@@ -1,30 +1,31 @@
 ﻿module GetKeyboardInput
 open System
 
-let GetKeyAndModifierTest() =
+let GetKeyAndModifierTest() : ConsoleKeyInfo =
 //Source: https://docs.microsoft.com/en-us/dotnet/api/system.consolekeyinfo.modifiers?view=netframework-4.7.2
       Console.TreatControlCAsInput <- true
       Console.WriteLine("Press any combination of CTRL, ALT, and SHIFT, and a console key.")
       Console.WriteLine("Press the Escape (Esc) key to quit: \n")
       
-      let mutable KeepGettingInput = true
-      while KeepGettingInput do
-         let cki = Console.ReadKey()
-         Console.Write(" --- You pressed ")
-         match cki.Modifiers with
+      let cki = Console.ReadKey()
+      printfn " --- You pressed "
+      printfn "the letter is : %c" cki.KeyChar
+      match cki.Modifiers with
          | ConsoleModifiers.Alt -> printfn "ALT+"
          | ConsoleModifiers.Shift -> printfn "SHIFT+" 
          | ConsoleModifiers.Control  -> printfn "CTRL+"
          | _ -> printf "not recognized modifier"//Do nothing
-
-         if (cki.Equals(ConsoleKey.Escape)) then
-            KeepGettingInput <- false //exit loop.
-         let keyPressed = cki.Key.ToString()
-         printfn "%s" keyPressed //Keys er tal, bogstaver, muligvis alle characters.
-
-         if (cki.Key.ToString().Equals("H") && cki.Modifiers.Equals(ConsoleModifiers.Control)) then
-            printfn "Call GetHelp()"
-      //Return ConsoleKeyInfo
+      //Exit
+      printf "Exit"
+      if (cki.Equals(ConsoleKey.Escape)) then
+         printf "Exit"
+         Config.gameRunning <- false //exit Game.
+      //GetHelp | S: i move this to game session
+//      if (cki.Key.ToString().Equals("H") && cki.Modifiers.Equals(ConsoleModifiers.Control)) then
+//            printfn "Call GetHelp()"
+//            let char = GetHelp.HelpLetter("L_m__")("Lamas")
+//            printfn "the letter from GetHelp is = %c" char
+      cki
         
 
 

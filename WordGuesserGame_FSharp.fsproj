@@ -6,15 +6,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="GetKeyboardInput.fs" />
-    <Compile Include="AssignmentDescription.fs" />
     <Compile Include="Config.fs" />
-    <Compile Include="SettingsMenu.fs" />
+    <Compile Include="GetKeyboardInput.fs" />
     <Compile Include="HelperClasses\SelectWordForGame.fs" />
     <Compile Include="HelperClasses\GetHiddenWord.fs" />
     <Compile Include="HelperClasses\CheckIfWordFullyGuessed.fs" />
     <Compile Include="HelperClasses\GetHelp.fs" />
     <Compile Include="HelperClasses\GameSession.fs" />
+    <Compile Include="AssignmentDescription.fs" />
+    <Compile Include="SettingsMenu.fs" />
     <Compile Include="WordGuesserGame.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>

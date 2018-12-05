@@ -13,3 +13,9 @@ let MULTIPLE = false //if this is true, the user might enter more than one chara
 
 let WORDS = ["Word cake"; "Sandwich cake"; "Desert"; "House" ] //at list of strings.
 //It is from this collection the program must get the random words to be guessed.
+
+let mutable programRunning = true; //Make bool for keeping Program loop running.
+    //so the play returns to the menu after each game
+
+let mutable gameRunning = false; //Make bool for keeping Game loop running.
+    //so the player can keep playing until he wants to stop or he wins
